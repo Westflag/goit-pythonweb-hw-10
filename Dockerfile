@@ -13,7 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копіюємо код застосунку в контейнер
 COPY . .
 
-ENV DATABASE_URL="postgresql+psycopg2://user:567234@db:5432/contacts_db"
+ENV PYTHONUNBUFFERED=1
+ENV DOTENV_FILE=.env
 
 # Визначаємо команду для запуску застосунку
 CMD ["python", "main.py"]
